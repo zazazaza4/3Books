@@ -1,0 +1,68 @@
+{
+  "name": "server",
+  "private": true,
+  "engines": {
+    "node": "18.x.x",
+    "npm": "9.x.x"
+  },
+  "type": "module",
+  "imports": {
+    "#libs/*": "./src/libs/*",
+    "#packages/*": "./src/packages/*"
+  },
+  "scripts": {
+    "migrate:make": "npx knex migrate:make",
+    "migrate:rollback": "npx knex migrate:rollback",
+    "migrate:run": "npx knex migrate:latest",
+    "seed:run": "npx knex seed:run",
+    "start": "nodemon src/main.js",
+    "lint:js": "npx eslint --ext .js src",
+    "lint": "npm run lint:js",
+    "pretest": "cross-env NODE_ENV=test npm run migrate:run",
+    "test": "cross-env NODE_ENV=test node --experimental-vm-modules --expose-gc --no-compilation-cache ../node_modules/jest/bin/jest.js --runInBand",
+    "test:starter": "npm run test -- --verbose --rootDir=tests/api/0-starter/",
+    "test:dislike-post": "npm run test -- --verbose --rootDir=tests/api/1-dislike-post/",
+    "test:update-post": "npm run test -- --verbose --rootDir=tests/api/2-update-post/",
+    "test:delete-post": "npm run test -- --verbose --rootDir=tests/api/3-delete-post/",
+    "test:update-comment": "npm run test -- --verbose --rootDir=tests/api/4-update-comment/",
+    "test:delete-comment": "npm run test -- --verbose --rootDir=tests/api/5-delete-comment/",
+    "test:like-dislike-comment": "npm run test -- --verbose --rootDir=tests/api/6-like-dislike-comment/",
+    "test:show-hide-own-posts": "npm run test -- --verbose --rootDir=tests/api/7-show-hide-own-posts/",
+    "test:show-liked-by-own-posts": "npm run test -- --verbose --rootDir=tests/api/8-show-liked-by-own-posts/",
+    "test:show-who-liked-post": "npm run test -- --verbose --rootDir=tests/api/9-show-who-liked-post/",
+    "test:show-who-liked-comment": "npm run test -- --verbose --rootDir=tests/api/10-show-who-liked-comment/",
+    "test:update-profile": "npm run test -- --verbose --rootDir=tests/api/11-update-profile/",
+    "test:set-user-status": "npm run test -- --verbose --rootDir=tests/api/12-set-user-status/",
+    "test:reset-set-password": "npm run test -- --verbose --rootDir=tests/api/13-reset-set-password/"
+  },
+  "dependencies": {
+    "@fastify/cors": "8.3.0",
+    "@fastify/static": "6.10.2",
+    "axios": "1.4.0",
+    "bcrypt": "5.1.0",
+    "convict": "6.2.4",
+    "dotenv": "16.3.0",
+    "fastify": "4.18.0",
+    "fastify-multer": "2.0.3",
+    "fastify-plugin": "4.5.0",
+    "form-data": "4.0.0",
+    "jsonwebtoken": "9.0.0",
+    "knex": "2.4.2",
+    "nodemon": "2.0.22",
+    "objection": "3.0.1",
+    "pg": "8.11.0",
+    "pg-hstore": "2.3.4",
+    "qs": "6.11.2",
+    "socket.io": "4.6.2"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "8.0.2",
+    "@jest/globals": "29.5.0",
+    "@types/jest": "29.5.2",
+    "cross-env": "7.0.3",
+    "eslint-config-airbnb-base": "15.0.0",
+    "jest": "29.5.0",
+    "npm": "9.7.1",
+    "pino-pretty": "10.0.0"
+  }
+}

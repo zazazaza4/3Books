@@ -1,0 +1,43 @@
+{
+  "name": "client",
+  "private": true,
+  "version": "0.0.0",
+  "engines": {
+    "node": "18.x.x",
+    "npm": "9.x.x"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "npm run lint:css && npm run lint:js",
+    "lint:css": "npx stylelint \"src/**/*.scss\"",
+    "lint:js": "npx eslint --ext .js,jsx src"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.45.1",
+    "react-redux": "^8.1.1",
+    "react-router-dom": "^6.14.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@vitejs/plugin-react": "^4.0.1",
+    "eslint": "^8.44.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.1",
+    "sass": "^1.63.6",
+    "stylelint-config-standard-scss": "^10.0.0",
+    "stylelint-scss": "^5.0.1",
+    "vite": "^4.4.0"
+  }
+}

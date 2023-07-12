@@ -1,0 +1,86 @@
+root: true
+
+parserOptions:
+  ecmaVersion: 2022
+  sourceType: module
+  project:
+    - ./client/jsconfig.json
+
+settings:
+  node: true
+
+extends:
+  - eslint:recommended
+  - plugin:import/recommended
+  - plugin:unicorn/recommended
+  - plugin:sonarjs/recommended
+
+plugins:
+  - simple-import-sort
+
+rules:
+  no-restricted-syntax:
+    - error
+    - selector: SwitchCase > *.consequent[type!="BlockStatement"]
+      message: Switch cases without blocks are forbidden.
+  no-console:
+    - error
+  max-params:
+    - error
+    - 3
+  no-multiple-empty-lines:
+    - error
+    - max: 1
+  curly:
+    - error
+    - all
+  unicorn/no-null:
+    - off
+  simple-import-sort/imports:
+    - error
+  simple-import-sort/exports:
+    - error
+  import/no-unresolved:
+    - off
+  import/extensions:
+    - error
+    - always
+    - ignorePackages: true
+  import/newline-after-import:
+    - error
+    - count: 1
+  import/no-default-export:
+    - error
+  import/first:
+    - error
+  import/no-duplicates:
+    - error
+  no-unused-vars:
+    - error
+    - argsIgnorePattern: ^_
+      ignoreRestSiblings: true
+  sonarjs/cognitive-complexity:
+    - error
+    - 18
+  quotes:
+    - error
+    - single
+  object-curly-spacing:
+    - error
+    - always
+  semi:
+    - error
+    - always
+
+overrides:
+  - files:
+      - project.config.cjs
+      - commitlint.config.cjs
+      - dangerfile.cjs
+    parserOptions:
+      sourceType: commonjs
+    env:
+      node: true
+    rules:
+      'import/no-default-export':
+        - off

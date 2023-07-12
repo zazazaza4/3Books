@@ -1,0 +1,17 @@
+{
+  "name": "shared",
+  "private": true,
+  "engines": {
+    "node": "18.x.x",
+    "npm": "9.x.x"
+  },
+  "type": "module",
+  "scripts": {
+    "lint:js": "npx eslint --ext .js src",
+    "lint": "npm run lint:js"
+  },
+  "dependencies": {
+    "dayjs": "1.11.8",
+    "joi": "17.9.2"
+  }
+}

@@ -1,0 +1,18 @@
+env:
+  node: true
+
+extends:
+  - ../.eslintrc.yml
+
+overrides:
+  - files:
+      - knexfile.js
+    rules:
+      'import/no-default-export':
+        - off
+  - files:
+      - src/db/migrations/**/*.js
+    rules:
+      'unicorn/filename-case':
+        - error
+        - case: snakeCase

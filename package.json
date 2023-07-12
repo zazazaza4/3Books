@@ -1,0 +1,49 @@
+{
+  "name": "3books",
+  "private": true,
+  "engines": {
+    "node": "18.x.x",
+    "npm": "9.x.x"
+  },
+  "type": "module",
+  "workspaces": [
+    "client",
+    "server",
+    "shared"
+  ],
+  "scripts": {
+    "lint:editorconfig": "editorconfig-checker",
+    "lint:fs": "ls-lint",
+    "lint:shared:js": "npm run lint:js -w shared",
+    "lint:shared": "npm run lint -w shared",
+    "lint:client:css": "npm run lint:css -w client",
+    "lint:client:js": "npm run lint:js -w client",
+    "lint:client": "npm run lint -w client",
+    "lint:prettify": "npx prettier --check \"**/*.{js,jsx,scss,json,md,html}\"",
+    "lint:server:js": "npm run lint:js -w server",
+    "lint:server": "npm run lint -w server",
+    "lint": "npm run lint:editorconfig && npm run lint:fs && npm run lint:prettify && npm run lint -ws",
+    "prettify": "npx prettier --write \"**/*.{js,jsx,scss,json,md,html}\""
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.6.5",
+    "@commitlint/config-conventional": "17.6.5",
+    "@ls-lint/ls-lint": "2.0.0",
+    "danger": "11.2.6",
+    "editorconfig-checker": "5.1.0",
+    "eslint": "8.43.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-simple-import-sort": "10.0.0",
+    "eslint-plugin-sonarjs": "0.19.0",
+    "eslint-plugin-unicorn": "47.0.0",
+    "lint-staged": "13.2.2",
+    "prettier": "2.8.8",
+    "simple-git-hooks": "2.8.1",
+    "stylelint": "15.7.0",
+    "stylelint-config-standard": "33.0.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "commit-msg": "npx commitlint --edit $1 -c -g ./commitlint.config.cjs"
+  }
+}
