@@ -2,3 +2,21 @@
   border: 1px solid var(--light-shadow);
   border-radius: 0.29rem;
 }
+
+@mixin flexbox($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin overlay {
+  background-color: rgba($color: #000, $alpha: 60%);
+}
+
+@mixin scale-hover($num) {
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale($num);
+  }
+}
