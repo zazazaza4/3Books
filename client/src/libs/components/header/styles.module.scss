@@ -1,0 +1,190 @@
+@import "~/assets/css/styles";
+
+.header {
+  @include flexbox(center, center);
+
+  height: var(--header-height);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 var(--space-page-margin);
+  background-color: var(--primary-color);
+  color: var(--white);
+  transition: top 0.3s ease-in-out;
+
+  &.hidden {
+    top: -100px;
+  }
+
+  &Wrapper {
+    @include flexbox(space-between, center);
+
+    width: 100%;
+    max-width: var(--max-width);
+  }
+}
+
+.nav {
+  @include flexbox(space-between, center);
+}
+
+.menu {
+  @include flexbox(center, center);
+
+  column-gap: var(--space-5);
+
+  &Item {
+    position: relative;
+    padding: 0 var(--space-3);
+
+    a {
+      font-size: var(--font-sizes-20);
+      font-weight: var(--font-weights-bold);
+      transition: 0.3s ease-in-out;
+
+      &::after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background-color: var(--secondary-color);
+        position: absolute;
+        bottom: -4px;
+        left: 20px;
+        transition: width 0.2s ease-in-out;
+      }
+
+      &:hover {
+        color: var(--secondary-color);
+
+        &::after {
+          width: 30%;
+        }
+      }
+    }
+  }
+}
+
+.logoWrapper {
+  height: 3rem;
+
+  @include scale-hover(0.85);
+}
+
+.btnGroup {
+  @include flexbox(space-between, center);
+
+  column-gap: var(--space-2);
+}
+
+.user {
+  &Wrapper {
+    position: relative;
+
+    @include flexbox(space-between, center);
+
+    margin-left: var(--space-6);
+    color: var(--black);
+    font-weight: var(--font-weights-bold);
+    font-size: var(--font-sizes-16);
+    cursor: pointer;
+  }
+
+  &SubmenuWrap {
+    position: absolute;
+    top: 100%;
+    right: 10%;
+    width: 320px;
+
+    @include flexbox(space-between, center);
+
+    flex-direction: column;
+  }
+
+  &Submenu {
+    @include border;
+
+    background-color: var(--white);
+    padding: var(--space-4);
+    margin: var(--space-3);
+  }
+
+  &Info {
+    @include flexbox(space-between, center);
+
+    h3 {
+      font-weight: var(--font-weights-normal);
+      margin-left: var(--space-4);
+    }
+  }
+}
+
+.dropdown {
+  &Menu {
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    width: 200px;
+    background-color: var(--white);
+    border-radius: var(--radii-2);
+    padding: var(--space-2) var(--space-4);
+    cursor: auto;
+
+    @include border;
+
+    hr {
+      color: var(--primary-color);
+      opacity: 0.6;
+      margin: 0;
+    }
+
+    h3 {
+      width: 100%;
+      text-align: center;
+      padding: var(--space-2) 0;
+      margin: 0;
+      font-weight: var(--font-weights-bold);
+      font-size: var(--font-sizes-20);
+      color: var(--primary-color);
+      line-height: var(--letter-spacings-4);
+
+      span {
+        font-size: 14px;
+        color: var(--secondary-text-color);
+        font-weight: 400;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      height: 20px;
+      width: 20px;
+      background: var(--white);
+      transform: rotate(45deg);
+      box-shadow: -1px 0 0 var(--light-shadow), 0 -1px 0 var(--light-shadow);
+    }
+  }
+
+  &Items {
+    @include flexbox(space-between, flex-start);
+
+    flex-direction: column;
+  }
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: var(--speed) ease;
+}
+
+.inactive {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: var(--speed) ease;
+}
