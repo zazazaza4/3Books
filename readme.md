@@ -2,7 +2,14 @@
 
 ## Description
 
+<<<<<<< HEAD
+
 https://trello.com/b/O24dhHGE/booksapp
+
+=======
+https://trello.com/b/O24dhHGE/booksapp
+
+> > > > > > > 116c98142113ba903ad81121929af5d2202549f6
 
 ## Technologies
 
