@@ -1,7 +1,16 @@
 # Books
 
 ## Description
+
+<<<<<<< HEAD
+
 https://trello.com/b/O24dhHGE/booksapp
+
+=======
+https://trello.com/b/O24dhHGE/booksapp
+
+> > > > > > > 116c98142113ba903ad81121929af5d2202549f6
+
 ## Technologies
 
 The main frameworks and libraries used in the project are listed here. A complete list of technologies used for each part of the project is in the `package.json` files in the `client` and `server` folders.
@@ -44,3 +53,39 @@ The main frameworks and libraries used in the project are listed here. A complet
 1. [PostgreSQL](https://www.postgresql.org/download/ 'PostgreSQL')
 
 ## Installation
+
+## Conventions for Development Workflow
+
+- **CI**: Continuous Integration
+- **Git**: Version control system
+- **Pull Request flow**: Workflow for proposing and reviewing code changes
+
+### Ticket Naming Convention
+
+Format: `<project-prefix>-<issue-number>: <ticket-title>`
+
+Example: `books-5: Add Clinician Dashboard`
+
+### Branch Naming Convention
+
+Format: `<type>/<project-prefix>-<issue-number>-<short-desc>`
+
+Types: `task`, `fix`
+
+Examples:
+
+- `task/books-5-add-clinician-dashboard`
+- `task/books-12-add-clinician-flow`
+- `fix/books-16-fix-clinician-flow`
+
+### Commit Message Convention
+
+Format: `<project-prefix>-<issue-number>: <modifier> <description>`
+
+Modifiers: `+` (add), `*` (edit), `-` (remove)
+
+Examples:
+
+- `books-5: + title for dashboard`
+- `books-12: * dashboard title`
+- `books-16: - dashboard title`
