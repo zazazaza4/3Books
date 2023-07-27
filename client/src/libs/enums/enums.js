@@ -8,3 +8,4 @@ export {
   IconSize,
   ImageSize
 } from './components/components.js';
+export { UseFormMode } from './form/use-form-mode.enum.js';
