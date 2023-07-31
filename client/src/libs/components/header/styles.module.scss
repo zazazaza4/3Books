@@ -12,6 +12,7 @@
   background-color: var(--primary-color);
   color: var(--white);
   transition: top 0.3s ease-in-out;
+  z-index: 10;
 
   &.hidden {
     top: -100px;
