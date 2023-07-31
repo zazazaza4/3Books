@@ -1,0 +1,41 @@
+@import "~/assets/css/styles";
+
+.home {
+  width: 100%;
+}
+
+.pageHeader {
+  padding: var(--header-height);
+  text-align: center;
+  margin-bottom: var(--space-3);
+  position: relative;
+  background-image: url("~/assets/images/page-header-bg.jpg");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  h2 {
+    position: relative;
+    color: var(--white);
+    font-size: var(--font-sizes-32);
+    line-height: var(--line-heights-120);
+    z-index: 3;
+  }
+
+  .search {
+    position: relative;
+    z-index: 3;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+    @include overlay;
+  }
+}
