@@ -1,7 +1,7 @@
 import PropsTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import { BookCarousel } from '~/libs/components/book-carousel/book-carousel.jxs';
+import { BookCarousel } from '~/libs/components/book-carousel/book-carousel.jsx';
 import { Button } from '~/libs/components/button/button.jsx';
 
 import styles from './styles.module.scss';
