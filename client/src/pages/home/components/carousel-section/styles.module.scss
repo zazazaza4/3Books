@@ -1,0 +1,9 @@
+.section {
+  padding: var(--space-0) var(--space-2);
+
+  &Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

@@ -1,16 +1,15 @@
 const AppRoute = {
   ROOT: '/',
-  BOOKS: '/tags',
   BOOK: '/books/:book',
   READER: '/reader/:book',
+  CONTACT: '/contact',
+  ABOUT: '/about',
+  HELP: '/help',
+  BOOKS: '/tags/:tag',
   ANY: '*',
   LOGIN: '/login',
   REGISTRATION: '/registration',
-  PROFILE: '/profile',
-  HELP: '/help',
-  ABOUT: '/about',
-  CONTACT: '/contact',
-  PROFILE_EDIT: '/profile/edit'
+  PROFILE: '/profile'
 };
 
 export { AppRoute };

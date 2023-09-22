@@ -1,0 +1,15 @@
+@import "~/assets/css/styles";
+
+.carousel {
+  .swiper-slide {
+    width: 15%;
+
+    @include tablet {
+      width: 30%;
+    }
+
+    @include mobile {
+      width: 40%;
+    }
+  }
+}

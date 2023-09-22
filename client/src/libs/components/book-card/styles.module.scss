@@ -1,0 +1,32 @@
+@import "~/assets/css/styles";
+
+.card {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-top: 160%;
+  border-radius: var(--radii-2);
+  margin-top: 1rem;
+
+  &Title {
+    font-size: var(--font-sizes-20);
+    text-align: center;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--black);
+    opacity: 0;
+    transition: opacity var(--speed) ease;
+    border-radius: var(--radii-2);
+  }
+
+  @media (hover: hover) {
+    &:hover::before {
+      opacity: 0.8;
+    }
+  }
+}
