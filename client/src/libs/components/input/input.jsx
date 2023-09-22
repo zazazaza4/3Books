@@ -44,6 +44,11 @@ const Input = ({
             type={type}
             disabled={disabled}
             placeholder={placeholder}
+            className={clsx(
+              styles.input,
+              iconName && styles.withIcon,
+              className
+            )}
           />
         )}
       </div>

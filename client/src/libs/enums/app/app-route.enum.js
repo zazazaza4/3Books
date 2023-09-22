@@ -9,8 +9,7 @@ const AppRoute = {
   ANY: '*',
   LOGIN: '/login',
   REGISTRATION: '/registration',
-  PROFILE: '/profile',
-  PROFILE_EDIT: '/profile/edit'
+  PROFILE: '/profile'
 };
 
 export { AppRoute };
