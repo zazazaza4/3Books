@@ -10,7 +10,7 @@
 }
 
 @mixin overlay {
-  background-color: rgba($color: #000, $alpha: 60%);
+  background-color: rgba($color: #000, $alpha: 80%);
 }
 
 @mixin scale-hover($num) {
