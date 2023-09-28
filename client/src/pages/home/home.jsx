@@ -16,19 +16,24 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <div className={styles.pageHeader}>
-        <h2>
-          3Books is an innovative project aimed at providing readers with a
-          unique and immersive reading experience through parallel translation.
-        </h2>
-        <div className={styles.search}>
-          <Input
-            iconName={IconName.QUESTION}
-            placeholder="Search books..."
-            name="search"
-            value=""
-            control={control}
-          />
-        </div>
+        <section>
+          <div className={styles.title}>A home for your books.</div>
+          <div className={styles.subtitle}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
+            dolorem!
+          </div>
+          <div className={styles.search}>
+            <Input
+              className={styles.search}
+              iconName={IconName.QUESTION}
+              placeholder="Search books..."
+              name="search"
+              value=""
+              control={control}
+            />
+          </div>
+        </section>
+        <section className={styles.quotation}>quotation</section>
       </div>
       <div className="container">
         <CarouselSection title="For Children" books={books} />
